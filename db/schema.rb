@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_212954) do
+ActiveRecord::Schema.define(version: 2018_07_12_213114) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2018_07_12_212954) do
     t.index ["Location_id"], name: "index_guide_availability_locations_on_Location_id"
   end
 
+  create_table "guide_availability_options", force: :cascade do |t|
+    t.integer "GuideAvailability_id"
+    t.integer "Option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["GuideAvailability_id"], name: "index_guide_availability_options_on_GuideAvailability_id"
+    t.index ["Option_id"], name: "index_guide_availability_options_on_Option_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -51,6 +60,13 @@ ActiveRecord::Schema.define(version: 2018_07_12_212954) do
 
   create_table "options", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
