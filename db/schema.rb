@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_212605) do
+ActiveRecord::Schema.define(version: 2018_07_12_212912) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2018_07_12_212605) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "guide_availability_activities", force: :cascade do |t|
+    t.integer "GuideAvailability_id"
+    t.integer "Activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Activity_id"], name: "index_guide_availability_activities_on_Activity_id"
+    t.index ["GuideAvailability_id"], name: "index_guide_availability_activities_on_GuideAvailability_id"
   end
 
   create_table "locations", force: :cascade do |t|
