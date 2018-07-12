@@ -1,0 +1,2 @@
+class GuideAvailability < ApplicationRecord
+end
