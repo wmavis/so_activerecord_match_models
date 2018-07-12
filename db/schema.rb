@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2018_07_12_220757) do
   create_table "guide_availabilities", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
+    t.integer "guide_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["guide_id"], name: "index_guide_availabilities_on_guide_id"
   end
 
   create_table "guide_availability_activities", force: :cascade do |t|

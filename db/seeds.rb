@@ -17,7 +17,9 @@ t1 = Trip.create(start_date: '01/01/2018', end_date: '01/03/2018')
 TripActivity.create(trip: t1, activity: a1)
 TripOption.create(trip: t1, option: o1)
 
-g1 = GuideAvailability.create(start_date: '01/01/2018', end_date: '01/04/2018')
-GuideAvailabilityActivity.create(guide_availability: g1, activity: a1)
-GuideAvailabilityLocation.create(guide_availability: g1, location: l1)
-GuideAvailabilityOption.create(guide_availability: g1, option: o1)
+g1 = Guide.create(name: 'Willard')
+
+ga1 = GuideAvailability.create(start_date: '01/01/2018', end_date: '01/04/2018', guide: g1)
+GuideAvailabilityActivity.create(guide_availability: ga1, activity: a1)
+GuideAvailabilityLocation.create(guide_availability: ga1, location: l1)
+GuideAvailabilityOption.create(guide_availability: ga1, option: o1)

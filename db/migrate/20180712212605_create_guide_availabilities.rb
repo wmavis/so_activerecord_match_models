@@ -3,6 +3,7 @@ class CreateGuideAvailabilities < ActiveRecord::Migration[5.2]
     create_table :guide_availabilities do |t|
       t.date :start_date
       t.date :end_date
+      t.references :guide, foreign_key: true
 
       t.timestamps
     end
