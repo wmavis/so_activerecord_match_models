@@ -26,30 +26,30 @@ ActiveRecord::Schema.define(version: 2018_07_12_213313) do
   end
 
   create_table "guide_availability_activities", force: :cascade do |t|
-    t.integer "GuideAvailability_id"
-    t.integer "Activity_id"
+    t.integer "guide_availability_id"
+    t.integer "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Activity_id"], name: "index_guide_availability_activities_on_Activity_id"
-    t.index ["GuideAvailability_id"], name: "index_guide_availability_activities_on_GuideAvailability_id"
+    t.index ["activity_id"], name: "index_guide_availability_activities_on_activity_id"
+    t.index ["guide_availability_id"], name: "index_guide_availability_activities_on_guide_availability_id"
   end
 
   create_table "guide_availability_locations", force: :cascade do |t|
-    t.integer "GuideAvailability_id"
-    t.integer "Location_id"
+    t.integer "guide_availability_id"
+    t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["GuideAvailability_id"], name: "index_guide_availability_locations_on_GuideAvailability_id"
-    t.index ["Location_id"], name: "index_guide_availability_locations_on_Location_id"
+    t.index ["guide_availability_id"], name: "index_guide_availability_locations_on_guide_availability_id"
+    t.index ["location_id"], name: "index_guide_availability_locations_on_location_id"
   end
 
   create_table "guide_availability_options", force: :cascade do |t|
-    t.integer "GuideAvailability_id"
-    t.integer "Option_id"
+    t.integer "guide_availability_id"
+    t.integer "option_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["GuideAvailability_id"], name: "index_guide_availability_options_on_GuideAvailability_id"
-    t.index ["Option_id"], name: "index_guide_availability_options_on_Option_id"
+    t.index ["guide_availability_id"], name: "index_guide_availability_options_on_guide_availability_id"
+    t.index ["option_id"], name: "index_guide_availability_options_on_option_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -65,21 +65,21 @@ ActiveRecord::Schema.define(version: 2018_07_12_213313) do
   end
 
   create_table "trip_activities", force: :cascade do |t|
-    t.integer "Trip_id"
-    t.integer "Activity_id"
+    t.integer "trip_id"
+    t.integer "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Activity_id"], name: "index_trip_activities_on_Activity_id"
-    t.index ["Trip_id"], name: "index_trip_activities_on_Trip_id"
+    t.index ["activity_id"], name: "index_trip_activities_on_activity_id"
+    t.index ["trip_id"], name: "index_trip_activities_on_trip_id"
   end
 
   create_table "trip_options", force: :cascade do |t|
-    t.integer "Trip_id"
-    t.integer "Option_id"
+    t.integer "trip_id"
+    t.integer "option_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Option_id"], name: "index_trip_options_on_Option_id"
-    t.index ["Trip_id"], name: "index_trip_options_on_Trip_id"
+    t.index ["option_id"], name: "index_trip_options_on_option_id"
+    t.index ["trip_id"], name: "index_trip_options_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|

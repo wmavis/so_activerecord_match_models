@@ -1,4 +1,4 @@
 class GuideAvailabilityActivity < ApplicationRecord
-  belongs_to :GuideAvailability
-  belongs_to :Activity
+  belongs_to :guide_availability
+  belongs_to :activity
 end

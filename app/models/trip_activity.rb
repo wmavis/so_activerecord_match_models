@@ -1,4 +1,4 @@
 class TripActivity < ApplicationRecord
-  belongs_to :Trip
-  belongs_to :Activity
+  belongs_to :trip
+  belongs_to :activity
 end

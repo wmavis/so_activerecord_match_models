@@ -1,4 +1,4 @@
 class TripOption < ApplicationRecord
-  belongs_to :Trip
-  belongs_to :Option
+  belongs_to :trip
+  belongs_to :option
 end
