@@ -9,4 +9,12 @@ class Trip < ApplicationRecord
       .where('start_date > ?', Date.today)
       .where.not(:id => WinningBid.select(:trip_id))
   end
+
+  def self.available_for_guide(guide)
+    .where('start_date >= ?', '?')
+      .where('end_date <= ?', '?')
+      .where('location = ?', '?')
+      # match options
+      # match activities
+  end
 end
